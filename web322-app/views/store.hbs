@@ -1,0 +1,27 @@
+<div class="row">
+	<div class="col-md-12">
+		<h2>Items</h2>
+		<hr>
+		<div class="table-responsive">                          {{!-- bootstrap class --}}
+            <table class="table">
+                <thead>
+                    <th>Category&nbsp;Number</th>
+                    <th>Item&nbsp;Title</th>
+                </thead>
+                <tbody>
+                {{#each items}}
+                <tr>
+                    <td><a href="/items?category={{this.dataValues.category}}">{{this.dataValues.category}}</a></td>
+                    <td><a href="/item/{{this.dataValues.id}}">{{this.dataValues.title}}</a></td>
+                </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+	</div>
+    {{#unless items}}                                           <!-- unless = age items vojod nadasht -->
+        <div class="col-md-12 text-center">
+            <strong>{{message}}</strong>
+        </div>
+    {{/unless}}
+</div>

@@ -1,0 +1,18 @@
+cmd:
+1. npm init => esme package: WEB322-APP
+2. npm install express ejs              // jofte moduleha ro nasb mikone
+3. npm install nodemon --save-dev       // nodemon baes mishe dige baraye taghir faghat page ro reload konim. lazem nist server ro stop va re run konim
+
+age npm install bezanim kole dependency ha dar package.json ro nasb mikone
+badesh bezanim npm start
+
+package.json:
+// mibini ke 3ta dependency ha ezafe shodan
+be script ezafe mikonim =>
+"Scripts":{
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+}
+// hala dige npm start miyad nodemon ro ejra mikone
+
+// toye site mongoDb Atlas, bayad Database ro resume konim

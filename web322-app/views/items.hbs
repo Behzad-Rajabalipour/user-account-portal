@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2>Items</h2>
+        <hr>
+        <div class="table-responsive">              <!-- classe bootstrap -->
+            <table class="table">
+                <thead>
+                    <th>Item&nbsp;Number</th>
+                    <th>category&nbsp;Number</th>
+                    <th>Post&nbsp;Date</th>
+                    <th>featureImage</th>
+                    <th>price</th>
+                    <th>title</th>
+                    <th>body</th>
+                    <th>published</th>
+                </thead>
+                <tbody>
+                {{#each items}}
+                <tr>
+                    <td><a href="/item/{{this.dataValues.itemNum}}">{{this.dataValues.itemNum}}</a></td>
+                    <td><a href="/items?category={{this.dataValues.category}}">{{this.dataValues.category}}</a></td>
+                    <td><a href="/items?minDate={{this.dataValues.postDate}}">{{this.dataValues.postDate}}</a></td>
+                    <td><a href="{{this.dataValues.featureImage}}">{{this.dataValues.featureImage}}</a></td>
+                    <td>{{this.dataValues.price}}</td>
+                    <td>{{this.dataValues.title}}</td>
+                    <td><a href="/store">Published Items</a></td>
+                </tr>
+                {{/each}}
+                </tbody>
+            </table>
+         </div>
+    </div>
+    {{#unless items}}
+        <div class="col-md-12 text-center">
+            <strong>{{message}}</strong>
+        </div>
+    {{/unless}}
+</div>

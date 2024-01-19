@@ -1,0 +1,102 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2> category: {{item.category}} - price: {{ item.price}}$ - Item: {{ item.title}}</h2>
+        <hr />
+        <form method="POST" action="/item/update" enctype="multipart/form-data">
+            <fieldset>
+                <input id="id1" name="itemNum" type="hidden" value="{{item.itemNum}}"/>           <!-- type = "hidden". we need to submit itemNum too -->
+                <legend>Item Information</legend>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">                        {{!-- bootstrap class --}}
+                            <label for="c">Category:</label>
+                            <input class="form-control" id="c" type="text" value={{item.category}} readonly/>             <!-- name= ro nemizarim ke send nakone. faghat baraye neshun dadan hast -->
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="pd">Post Date:</label>
+                            <input class="form-control" id="pd" name="postDate" type="text" value="{{item.postDate}}" readonly />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="fm">Feature Image:</label>
+                            <input class="form-control" id="fm" name="featureImage" type="file" alt="No Image"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="p">Price:</label>
+                            <input class="form-control" id="p" name="price" type="text" value="{{item.price}}" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="t">Title: </label>
+                            <input class="form-control" id="t" name="title" type="text" value="{{item.title}}" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="b">Body:</label>
+                        <input class="form-control" id="b" name="body" type="text" value="{{item.body}}" />
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="pu">Published:</label>
+                            <input class="form-control" id="pu" type="text" value="{{item.published}}" readonly/>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Category Inormation</legend>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="p2">Published Status:</label>
+                            <input class="form-control" role="button" type="checkbox" {{#if item.published}}checked{{/if}} disabled/>     {{!-- age published bud dakhelesh(checked) ro bezar. role="button" bootstrap hast baraye cursor--}}
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="ci">Category Id:</label>
+                            <input class="form-control" id="ci" type="text" value="{{item.category}}" disabled />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Change Publish Status:</label><br />
+                            <label  class="checkbox-inline">
+                                <input type="radio" name="published" value="true" {{#equal item.published "true"}}checked{{/equal}} /> True   {{!-- server.js => #ref4 --}}
+                            </label>
+                            <label  class="checkbox-inline">
+                                <input type="radio" name="published" value="false" {{#equal item.published "false"}}checked{{/equal}}/> False   {{!-- vaghti checked hast yani in input ro befrest ba in value, pas value bayad bashe --}}
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="c3">Category Name</label>
+                                <select class="form-control" name="category" id="c3" >
+                                    <option value="1" {{#equal item.category "1"}}selected{{/equal}}>Home, Garden</option>
+                                    <option value="2" {{#equal item.category "2"}}selected{{/equal}}>Electronics, Computers, Video Games</option>
+                                    <option value="3" {{#equal item.category "3"}}selected{{/equal}}>Clothing</option>
+                                    <option value="4" {{#equal item.category "4"}}selected{{/equal}}>Sports & Outdoors</option>
+                                    <option value="5" {{#equal item.category "5"}}selected{{/equal}}>Pets</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <hr />
+            <input type="submit" class="btn btn-primary pull-right" value="Update Employee" /><br /><br /><br />
+        </form>
+    </div>
+</div>

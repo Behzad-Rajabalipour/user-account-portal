@@ -1,0 +1,20 @@
+<div class="row">       <!-- bootstrap -->
+    <div class="col-md-12">
+        <h2>{{title}}</h2>
+        <a href="/items/add" class="btn btn-success pull-right">Add new Item</a>    <!-- bootstrap -->
+        <hr>
+    </div>
+
+    {{!------------------------------------------------------------------------------------}}
+    {{#each CloudImages}}
+    <div class="col-md-4">      <!-- bootstrap -->
+        <a href="{{this}}" target="_blank">
+            <img src="{{this}}" alt="Image" class="img-responsive img-thumbnail">    {{!-- src = address az public shoro mishe --}}
+        </a>
+    </div>
+    {{else}}
+    <div class="col-md-12">     <!-- bootstrap -->
+        <strong>No Image Available</strong>
+    </div>
+    {{/each}}
+</div>

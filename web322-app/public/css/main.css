@@ -1,0 +1,9 @@
+.display1{
+    display: flex;
+    flex-wrap: wrap;
+}
+.display1 div{
+    border: 1px solid #ccc;
+    margin: 0 15px;
+    padding: 5px;
+}
