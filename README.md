@@ -116,29 +116,6 @@ To run this project locally, you need to have the following installed:
   - Check your email for a password recovery link
   - Follow the instructions to reset your password
 
-## Project Structure
-
-\`\`\`
-user-account-portal/
-├── .dockerignore
-├── .gitignore
-├── .prettierignore
-├── .prettierrc.yaml
-├── README.md
-├── docker-compose.yml
-├── package-lock.json
-├── package.json
-├── .github/
-│   └── workflows/
-├── .husky/
-├── nginx/
-├── scripts/
-├── src/
-│   ├── client/
-│   └── server/
-└── ...
-\`\`\`
-
 ## Contributing
 
 Contributions are welcome! Please follow these steps to contribute:
@@ -150,15 +127,7 @@ Contributions are welcome! Please follow these steps to contribute:
 5. Push to the branch (\`git push origin feature/your-feature-name\`)
 6. Open a pull request
 
-## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgements
-
-- Special thanks to all the contributors who have helped in developing this project.
-- [React](https://reactjs.org/)
-- [Node.js](https://nodejs.org/)
 - [Express.js](https://expressjs.com/)
 - [MongoDB](https://www.mongodb.com/)
 
